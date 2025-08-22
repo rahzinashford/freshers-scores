@@ -64,17 +64,8 @@ class Leaderboard {
                 photoElement.src = team.photo_url;
             }
 
-            // Update individual scores
-            const danceScore = teamCard.querySelector('.dance-score');
-            const songScore = teamCard.querySelector('.song-score');
-            const rampWalkScore = teamCard.querySelector('.ramp-walk-score');
-            const gameScore = teamCard.querySelector('.game-score');
+            // Update total score
             const totalScore = teamCard.querySelector('.total-score');
-
-            if (danceScore) danceScore.textContent = team.dance_score.toFixed(1);
-            if (songScore) songScore.textContent = team.song_score.toFixed(1);
-            if (rampWalkScore) rampWalkScore.textContent = team.ramp_walk_score.toFixed(1);
-            if (gameScore) gameScore.textContent = team.game_score.toFixed(1);
             if (totalScore) totalScore.textContent = team.total_score.toFixed(1);
 
             // Reorder cards based on ranking
@@ -159,3 +150,4 @@ window.addEventListener('beforeunload', () => {
         window.leaderboard.stopAutoRefresh();
     }
 });
+

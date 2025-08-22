@@ -27,35 +27,18 @@
                                  alt="{{ team.name }}" class="team-photo-display">
                         </div>
                         
-                        <div class="score-breakdown mb-3">
-                            <div class="row text-center">
-                                <div class="col-6">
-                                    <small class="text-muted">Dance</small>
-                                    <div class="fw-bold dance-score">{{ "%.1f"|format(team.dance_score) }}</div>
-                                </div>
-                                <div class="col-6">
-                                    <small class="text-muted">Song</small>
-                                    <div class="fw-bold song-score">{{ "%.1f"|format(team.song_score) }}</div>
-                                </div>
-                            </div>
-                            <div class="row text-center mt-2">
-                                <div class="col-6">
-                                    <small class="text-muted">Ramp Walk</small>
-                                    <div class="fw-bold ramp-walk-score">{{ "%.1f"|format(team.ramp_walk_score) }}</div>
-                                </div>
-                                <div class="col-6">
-                                    <small class="text-muted">Game</small>
-                                    <div class="fw-bold game-score">{{ "%.1f"|format(team.game_score) }}</div>
-                                </div>
+                        <div class="total-score-display mb-3">
+                            <div class="text-center">
+                                <h2 class="mb-1">
+                                    <span class="badge bg-success total-score" style="font-size: 1.5rem; padding: 0.8rem 1.2rem;">{{ "%.1f"|format(team.total_score) }}</span>
+                                </h2>
+                                <small class="text-muted">Total Score</small>
                             </div>
                         </div>
                     </div>
                     
                     <div class="card-footer text-center">
-                        <h4 class="mb-0">
-                            <span class="badge bg-success total-score">{{ "%.1f"|format(team.total_score) }}</span>
-                        </h4>
-                        <small class="text-muted">Total Score</small>
+                        <small class="text-muted">Team #{{ team.id }}</small>
                     </div>
                 </div>
             </div>
@@ -72,3 +55,4 @@
 <script src="{{ url_for('static', filename='js/confetti.js') }}"></script>
 <script src="{{ url_for('static', filename='js/leaderboard.js') }}"></script>
 {% endblock %}
+
