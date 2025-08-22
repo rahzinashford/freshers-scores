@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - College Event Scores{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1><i class="fas fa-cogs me-2"></i>Admin Dashboard</h1>
+            <button id="saveAllBtn" class="btn btn-success">
+                <i class="fas fa-save me-2"></i>Save All Changes
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Team #</th>
+                                <th>Photo</th>
+                                <th>Team Name</th>
+                                <th>Dance</th>
+                                <th>Song</th>
+                                <th>Ramp Walk</th>
+                                <th>Game</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for team in teams %}
+                            <tr data-team-id="{{ team.id }}">
+                                <td>{{ team.id }}</td>
+                                <td>
+                                    <div class="team-photo-container">
+                                        <img src="{{ team.photo_url or '/static/uploads/default-team.svg' }}" 
+                                             alt="{{ team.name }}" class="team-photo-thumb">
+                                        <input type="file" class="form-control form-control-sm mt-1 photo-upload" 
+                                               accept="image/*" data-team-id="{{ team.id }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control team-name" 
+                                           value="{{ team.name }}" data-team-id="{{ team.id }}">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control score-input" 
+                                           value="{{ team.dance_score }}" step="0.1" min="0" max="100"
+                                           data-team-id="{{ team.id }}" data-score-type="dance_score">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control score-input" 
+                                           value="{{ team.song_score }}" step="0.1" min="0" max="100"
+                                           data-team-id="{{ team.id }}" data-score-type="song_score">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control score-input" 
+                                           value="{{ team.ramp_walk_score }}" step="0.1" min="0" max="100"
+                                           data-team-id="{{ team.id }}" data-score-type="ramp_walk_score">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control score-input" 
+                                           value="{{ team.game_score }}" step="0.1" min="0" max="100"
+                                           data-team-id="{{ team.id }}" data-score-type="game_score">
+                                </td>
+                                <td>
+                                    <span class="badge bg-primary total-score">{{ "%.1f"|format(team.total_score) }}</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-success update-team-btn" 
+                                            data-team-id="{{ team.id }}">
+                                        <i class="fas fa-save"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button id="finalizeBtn" class="btn btn-warning">
+                <i class="fas fa-flag-checkered me-2"></i>Finalize Results
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Loading spinner -->
+<div id="loadingSpinner" class="d-none position-fixed top-50 start-50 translate-middle">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+{% endblock %}

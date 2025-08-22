@@ -1,0 +1,22 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="75" cy="75" r="75" fill="#6c757d" opacity="0.1"/>
+  
+  <!-- Team icon -->
+  <g transform="translate(37.5, 37.5)">
+    <!-- Person 1 -->
+    <circle cx="25" cy="25" r="12" fill="#6c757d" opacity="0.6"/>
+    <path d="M25 40 C15 40, 10 45, 10 55 L40 55 C40 45, 35 40, 25 40 Z" fill="#6c757d" opacity="0.6"/>
+    
+    <!-- Person 2 -->
+    <circle cx="50" cy="25" r="12" fill="#6c757d" opacity="0.6"/>
+    <path d="M50 40 C40 40, 35 45, 35 55 L65 55 C65 45, 60 40, 50 40 Z" fill="#6c757d" opacity="0.6"/>
+    
+    <!-- Person 3 -->
+    <circle cx="37.5" cy="45" r="10" fill="#6c757d" opacity="0.6"/>
+    <path d="M37.5 58 C29 58, 25 62, 25 70 L50 70 C50 62, 46 58, 37.5 58 Z" fill="#6c757d" opacity="0.6"/>
+  </g>
+  
+  <!-- Team text -->
+  <text x="75" y="125" text-anchor="middle" fill="#6c757d" font-family="Arial, sans-serif" font-size="12" opacity="0.7">TEAM</text>
+</svg>
