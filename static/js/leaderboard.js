@@ -150,4 +150,3 @@ window.addEventListener('beforeunload', () => {
         window.leaderboard.stopAutoRefresh();
     }
 });
-

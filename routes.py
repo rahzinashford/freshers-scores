@@ -2,7 +2,7 @@ import os
 from flask import render_template, request, jsonify, redirect, url_for, flash
 from werkzeug.utils import secure_filename
 from app import app, db
-from models import Team
+from models import Team, Performance
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
 
@@ -106,3 +106,63 @@ def finalize_results():
         'message': 'Results finalized',
         'top_teams': top_team_ids
     })
+
+@app.route('/performances')
+def performances():
+    """Performance tracking page"""
+    performances = Performance.query.order_by(Performance.id).all()
+    return render_template('performances.html', performances=performances)
+
+@app.route('/api/performances', methods=['GET'])
+def get_performances():
+    """API endpoint to get all performances"""
+    performances = Performance.query.order_by(Performance.id).all()
+    performances_data = [performance.to_dict() for performance in performances]
+    return jsonify(performances_data)
+
+@app.route('/api/performances/<int:performance_id>/complete', methods=['POST'])
+def complete_performance(performance_id):
+    """API endpoint to mark a performance as completed"""
+    performance = Performance.query.get_or_404(performance_id)
+    
+    if not performance.is_completed:
+        performance.mark_completed()
+        db.session.commit()
+        return jsonify({
+            'message': 'Performance marked as completed',
+            'performance': performance.to_dict()
+        })
+    
+    return jsonify({'message': 'Performance was already completed'})
+
+@app.route('/api/performances/<int:performance_id>/uncomplete', methods=['POST'])
+def uncomplete_performance(performance_id):
+    """API endpoint to mark a performance as not completed"""
+    performance = Performance.query.get_or_404(performance_id)
+    
+    if performance.is_completed:
+        performance.is_completed = False
+        performance.completed_at = None
+        db.session.commit()
+        return jsonify({
+            'message': 'Performance marked as not completed',
+            'performance': performance.to_dict()
+        })
+    
+    return jsonify({'message': 'Performance was already not completed'})
+
+@app.route('/api/performances/<int:performance_id>/notes', methods=['PUT'])
+def update_performance_notes(performance_id):
+    """API endpoint to update performance notes"""
+    performance = Performance.query.get_or_404(performance_id)
+    data = request.get_json()
+    
+    if 'notes' in data:
+        performance.notes = data['notes']
+        db.session.commit()
+        return jsonify({
+            'message': 'Notes updated successfully',
+            'performance': performance.to_dict()
+        })
+    
+    return jsonify({'error': 'No notes provided'}), 400
