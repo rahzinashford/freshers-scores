@@ -89,7 +89,7 @@ with app.app_context():
             ('Antonia Elizabeth', 'Group Dance', 'II', '8590456825', 'MC-3', '10:35-11:00Am'),
             ('Devanjana', 'Group Dance', 'II', '8891789148', 'MC-3', '10:35-11:00Am'),
             ('Afsal', 'Group Dance', 'I', '9633801508', 'MC-3', '10:35-11:00Am'),
-            ('Sillambazhagi', 'Stick Dance', 'III', '9043571145', 'MC-3', '10:35-11:00Am'),
+            ('Rihan', 'Group Dance', 'I', '6363921190', 'MC-6', '12:00PM-12:30PM'),
             ('Ananya', 'Group Dance', 'II', '8075010479', 'MC-3', '10:35-11:00Am'),
             
             # MC-4 (11:00-11:25Am)
@@ -111,21 +111,18 @@ with app.app_context():
             ('Gourav', 'Group Dance', 'II', '7994470146', 'MC-5', '11:25-12:00PM'),
             
             # MC-6 (12:00PM-12:30PM)
-            ('Asad Ali', 'Dance', 'II', None, 'MC-6', '12:00PM-12:30PM'),
             ('Surya Priya', 'Dance', 'III', '8590153302', 'MC-6', '12:00PM-12:30PM'),
             ('Amna', 'Group Dance', 'I', '8129546675', 'MC-6', '12:00PM-12:30PM'),
             ('Zia', 'Solo Dance', 'I', '9037866766', 'MC-6', '12:00PM-12:30PM'),
             ('Mazin', 'Group Dance', 'II', '7306654922', 'MC-6', '12:00PM-12:30PM'),
-            ('Rihan', 'Group Dance', 'I', '6363921190', 'MC-6', '12:00PM-12:30PM'),
+            ('Sillambazhagi', 'Martial Arts', 'III', '9043571145', 'MC-3', '10:35-11:00Am'),
             
             # MC-7 - Ramp Walk (12:30-1:00PM)
-            ('Third years', 'Ramp Walk', 'III', None, 'MC-7', '12:30-1:00PM'),
             ('Second years', 'Ramp Walk', 'II', None, 'MC-7', '12:30-1:00PM'),
             ('First years', 'Ramp Walk', 'I', None, 'MC-7', '12:30-1:00PM'),
             
             # Band (1:10-1:30PM)
             ('Shivaganga', 'Song', 'Band', '6235182816', 'Band', '1:10-1:30PM'),
-            ('Nihal N', 'Song', 'Band', None, 'Band', '1:10-1:30PM'),
             ('Zaied', 'Song', 'Band', '9495840773', 'Band', '1:10-1:30PM'),
             ('Mohammed Ubaid', 'Song', 'Band', '9663661357', 'Band', '1:10-1:30PM'),
         ]
