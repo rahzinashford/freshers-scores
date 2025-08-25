@@ -90,7 +90,7 @@ with app.app_context():
             ('Antonia Elizabeth', 'Group Dance', 'II', '8590456825', 'MC-3', '10:35-11:00Am'),
             ('Devanjana', 'Group Dance', 'II', '8891789148', 'MC-3', '10:35-11:00Am'),
             ('Afsal', 'Group Dance', 'I', '9633801508', 'MC-3', '10:35-11:00Am'),
-            ('Rihan', 'Group Dance', 'I', '6363921190', 'MC-6', '12:00PM-12:30PM'),
+            ('Rihan', 'Group Dance', 'I', '6363921190', 'MC-3', '12:00PM-12:30PM'),
             ('Ananya', 'Group Dance', 'II', '8075010479', 'MC-3', '10:35-11:00Am'),
             
             # MC-4 (11:00-11:25Am)
@@ -105,7 +105,7 @@ with app.app_context():
             ('Mohammed Rafi T A', 'Group Dance', 'I', '6235154329', 'MC-5', '11:25-12:00PM'),
             ('Alona', 'Group Dance', 'II', '7025912439', 'MC-5', '11:25-12:00PM'),
             ('DevaSurya', 'Group Dance', 'II', '9400716943', 'MC-5', '11:25-12:00PM'),
-            ('Niya', 'Group Dance', 'II', '7736534948', 'MC-5', '11:25-12:00PM'),
+            ('Niya', 'Group Dance', 'I', '7736534948', 'MC-5', '11:25-12:00PM'),
             ('Mohammed Nazim', 'Group Dance', 'III', '9037018545', 'MC-5', '11:25-12:00PM'),
             ('Rania', 'Group Dance', 'II', None, 'MC-5', '11:25-12:00PM'),
             ('Rajid', 'Group Dance', 'III', '8129282290', 'MC-5', '11:25-12:00PM'),
@@ -116,7 +116,7 @@ with app.app_context():
             ('Amna', 'Group Dance', 'I', '8129546675', 'MC-6', '12:00PM-12:30PM'),
             ('Zia', 'Solo Dance', 'I', '9037866766', 'MC-6', '12:00PM-12:30PM'),
             ('Mazin', 'Group Dance', 'II', '7306654922', 'MC-6', '12:00PM-12:30PM'),
-            ('Sillambazhagi', 'Martial Arts', 'III', '9043571145', 'MC-3', '10:35-11:00Am'),
+            ('Sillambazhagi', 'Martial Arts', 'III', '9043571145', 'MC-6', '10:35-11:00Am'),
             
             # MC-7 - Ramp Walk (12:30-1:00PM)
             ('Second years', 'Ramp Walk', 'II', None, 'MC-7', '12:30-1:00PM'),
