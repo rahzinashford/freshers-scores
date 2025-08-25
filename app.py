@@ -49,7 +49,8 @@ with app.app_context():
     if Team.query.count() == 0:
         default_teams = [
             "Team Alpha", "Team Beta", "Team Gamma", "Team Delta", "Team Epsilon",
-            "Team Zeta", "Team Eta", "Team Theta", "Team Iota", "Team Kappa", "Team Lambda"
+            "Team Zeta", "Team Eta", "Team Theta", "Team Iota", "Team Kappa", "Team Lambda",
+            "Team 12", "Team 13", "Team 14", "Team 15", "Team 16", "Team 17", "Team 18", "Team 19", "Team 20"
         ]
         
         for i, team_name in enumerate(default_teams, 1):
