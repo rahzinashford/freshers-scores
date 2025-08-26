@@ -41,7 +41,7 @@ with app.app_context():
     import models
     import routes
     
-    # Create tables
+  # Create tables
     db.create_all()
     
     # Initialize default teams if none exist
@@ -50,7 +50,7 @@ with app.app_context():
         default_teams = [
             "Team Alpha", "Team Beta", "Team Gamma", "Team Delta", "Team Epsilon",
             "Team Zeta", "Team Eta", "Team Theta", "Team Iota", "Team Kappa", "Team Lambda",
-            "Team 12", "Team 13", "Team 14", "Team 15", "Team 16", "Team 17", "Team 18", "Team 19", "Team 20"
+            "Team 12", "Team 13", "Team 14", "Team 15", "Team 16", "Team 17", "Team 18", "Team 19", "Team 20", "Team 21","Team 22", "Team 23", "Team 24", "Team 25", "Team 26", "Team 27" 
         ]
         
         for i, team_name in enumerate(default_teams, 1):
